@@ -5,6 +5,6 @@
 
 
 
-Dependent Variable $y_1$ | Dependent Variable $y_2$
+Dependent Variable Y1 | Dependent Variable Y2
 :----------------------:|:------------------:
 ![image](https://user-images.githubusercontent.com/45861503/77188511-7ea6c800-6aac-11ea-89b1-ee6a7d3b75bd.png)|![image](https://user-images.githubusercontent.com/45861503/77188539-88303000-6aac-11ea-80ee-aa52a77165d6.png)
