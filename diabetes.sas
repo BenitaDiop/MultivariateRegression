@@ -1,0 +1,21 @@
+TITLE 'DIABETES DATA';
+DATA DIABETES;
+  INFILE '/folders/myfolders/T3_4_DIABETES.DAT';
+  INPUT patient y1 y2 x1 x2 x3;
+  X1X2 = X1*X2;   X1SQ = X1*X1;
+  X1X3 = X1*X3;   X2SQ = X2*X2;
+  X2X3 = X2*X3;   X3SQ = X3*X3; run;
+  
+Proc Print DATA=DIABETES; run; 
+
+PROC REG SIMPLE;
+  MODEL Y1 Y2 = X1 X2 X3;
+  OVERALL:  MTEST /PRINT;
+RUN;
+
+PROC REG;
+  MODEL Y1 Y2 = X1 X2 X3 X1X2 X1X3 X2X3 X1SQ X2SQ X3SQ;
+  OVERALL9:  MTEST/print canprint;
+  Partial6:   MTEST X1X2,X1X3,X2X3,X1SQ,X2SQ,X3SQ/print canprint;
+  Partial3:   MTEST X1X2,X1X3,X2X3/print canprint;
+run;
